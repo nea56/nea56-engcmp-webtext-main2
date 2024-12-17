@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Design Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Google Fonts Import for Roboto (Thin) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .design-principles {
+      padding: 50px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    .design-principles h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .principle {
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .principle h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .principle p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .highlight-section {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .highlight-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .highlight-project {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .highlight-project img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .highlight-project p {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+    .image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.image-grid img {
+  width: 30%;
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Hero Image Section -->
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>Design Portfolio</h1>
+      <h2>Integrating Writing and Design</h2>
+    </div>
+  </div>
+
+  <!-- Design Projects Section with Photos -->
+  <div class="textblock" style="text-align: left">
+    <h2>My Design Projects</h2>
+    <div class="image-grid">
+      <a href="https://nea56.github.io/DesignFuego/" target="_blank">
+        <img src="DesignFuego.png" alt="Design Fuego" style="width:30%; cursor:pointer;">
+      </a>
+      <img src="CartoonNoor.png" alt="Cartoon Yourself" onclick="openModal('project2Modal')" style="width:30%; cursor:pointer;">
+      <img src="StudyCover.png" alt="UX/UI Design Study" onclick="openModal('project3Modal')" style="width:30%; cursor:pointer;">
+      <img src="Gooddesign.jpg" alt="Good Design" onclick="openModal('project4Modal')" style="width:30%; cursor:pointer;">
+      <img src="MagazineCover.png" alt="Magazine Cover" onclick="openModal('project5Modal')" style="width:30%; cursor:pointer;">
+    </div>
+  </div>
+
+  <!-- Design Principles Section -->
+  <div class="design-principles">
+    <h2>Key Takeaways</h2>
+    <div class="principles-grid">
+      <div class="principle">
+        <h3>1. Consider the role of rhetoric, technology, and ethics in acts of making.</h3>
+        <p>Understand how to use rhetoric to make meaning and create compelling documents. Work with specific software and hardware, thinking broadly about how the media tools we use shape the ways we think and write. Recognize and prioritize inclusive design and accessible design to more effectively write and design for diverse audiences including audiences with disabilities.</p>
+      </div>
+      <div class="principle">
+        <h3>2. Leverage Design Principles.</h3>
+        <p>Identify and apply common design principles including alignment, balance, contrast, proximity, repetition, and space. This includes learning how to talk about design using these principles.</p>
+      </div>
+      <div class="principle">
+        <h3>3. Engage with others in a workshop environment.</h3>
+        <p>Workshops take trust. We can learn far more together than we can individually, but to do so we need to establish a mutual respect with others in this space, realizing that learning is a process, and that we are all trying to get there in our own way. That being said, how can you use this time to not only learn from others, but also realize your responsibility in helping others learn?</p>
+      </div>
+      <div class="principle">
+        <h3>4. Practice revision within and across media forms.</h3>
+        <p>Each unit begins with a small project and ends with a larger one, so you’ll constantly be working through how to scale ideas up and down, how to pick out the most promising threads in your own work and develop them further. You’ll have opportunities to translate ideas and stories from one medium to another as well, exploring how media form contributes to meaning.</p>
+      </div>
+      <div class="principle">
+        <h3>5. Learn to present your work.</h3>
+        <p>One of the most important things we can do as communicators is to talk about our makings. To not only discuss what we made, but also our praxis—the theory and method behind what we made and how we hope it connects with others. We will do this in oral form, and also through the creation of portfolios.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Highlight Section for Design Resume -->
+
+  <div class="highlight-section">
+    <h2>My Design Projects</h2>
+    <div class="image-grid">
+      <img src="Creative resume2.png" alt="Design Resume" onclick="openModal('project6Modal')" style="cursor:pointer;">
+      <img src="Magazine Ad.png" alt="Magazine Ad" onclick="openModal('project7Modal')" style="cursor:pointer;">
+      <img src="ClientProj.png" alt="Client Project" onclick="openModal('project8Modal')" style="cursor:pointer;">
+    </div>
+  </div>
+  
+
+  <!-- Modals -->
+  <div id="project2Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project2Modal')">&times;</span>
+      <img src="CartoonNoor.png" alt="Cartoon Noor">
+      <p class="caption">Cartoon Yourself</p>
+      <p>This project was an opportunity to creatively express myself through a single-panel comic using Adobe Illustrator. I transformed a photo into a cartoon, blending real and stylized elements to reflect my personality visually.</p>
+    </div>
+  </div>
+
+  <div id="project3Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project3Modal')">&times;</span>
+      <a href="https://docs.google.com/presentation/d/1PBps301QuelvsOZw6iMIRL3mh2vd9cxuesnC34uBBd0/edit?usp=sharing" target="_blank">
+        <img src="logos3.jpg" alt="ABC Logo">
+      </a>
+      <p class="caption">UX/UI Design Study</p>
+      <p>This assignment involved conducting a UX study with participants to gather feedback on logo designs, refine the final version, and present the findings. It strengthened my skills in user research and design iteration.</p>
+    </div>
+  </div>
+
+  <div id="project4Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project4Modal')">&times;</span>
+      <img src="Gooddesign.jpg" alt="Good Design">
+      <p class="caption">Good Design</p>
+      <p>This project analyzed effective design principles such as alignment, balance, contrast, and space, showcasing how they contribute to creating impactful visual designs.</p>
+    </div>
+  </div>
+
+  <div id="project5Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project5Modal')">&times;</span>
+      <img src="MagazineCover.png" alt="Magazine Cover">
+      <p class="caption">Magazine Cover</p>
+      <p>This project involved recreating a magazine spread using typography and layout principles, helping me study and replicate professional designs.</p>
+    </div>
+  </div>
+
+  <div id="project6Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project6Modal')">&times;</span>
+      <img src="Creative resume2.png" alt="Design Resume">
+      <p class="caption">Design Resume</p>
+      <p>This creative resume project applied principles of typography, layout, and design to produce a visually engaging and professional presentation of my skills.</p>
+    </div>
+  </div>
+
+  <div id="project7Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project7Modal')">&times;</span>
+      <img src="Magazine Ad.png" alt="Magazine Ad">
+      <p class="caption">Magazine Ad</p>
+      <p>This project emphasizes layout design and visual storytelling through a magazine ad or poster. I crafted a balanced composition by integrating 50-100 words of copy with strong visuals, focusing on typography, color, and alignment.</p>
+    </div>
+  </div>
+
+  <div id="project8Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project8Modal')">&times;</span>
+      <img src="ClientSamples.png" alt="Client Project">
+      <p class="caption">A/B Client Project</p>
+      <p>For this project I worked with Pitt faculty to design a course or event flyer, applying key design principles and collaborative skills. This included contacting the client, 
+        gathering requirements, and creating A/B design samples for feedback. I applied the course goal of learning to present my work to effectively showcase my designs and explaining the rationale behind my choices, 
+        including typography and layout. This allowed me to align the designs with the client's needs and communicate my design process clearly, demonstrating my ability to present work and collaborate professionally.</p>
+    </div>
+  </div>
+  <!-- Script -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      const modals = document.getElementsByClassName('modal');
+      for (let modal of modals) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    };
+  </script>
+</body>
+</html>
+
+<!-- Designs Section -->
+<div class="design-principles">
+  <h2>Key Takeaways</h2>
+  <div class="principles-grid">
+    <div class="principle">
+      <h3>1. Consider the role of rhetoric, technology, and ethics in acts of making.</h3>
+      <p>In the Design Resume project, I explored how rhetorical choices and design technology influence the way personal branding communicates professional identity while ensuring the design was both ethical and accessible.</p>
+    </div>
+    <div class="principle">
+      <h3>2. Leverage Design Principles.</h3>
+      <p>In the Magazine Ad project, I applied core design principles like alignment and contrast to create a visually appealing and balanced layout that effectively conveys the intended message.</p>
+    </div>
+    <div class="principle">
+      <h3>3. Engage with others in a workshop environment.</h3>
+      <p>For the Client Project, I collaborated with professionals, gathering feedback and iterating on designs. This process highlighted the value of workshops and collaborative learning in achieving impactful results.</p>
+    </div>
+    <div class="principle">
+      <h3>4. Practice revision within and across media forms.</h3>
+      <p>In the Magazine Cover project, I focused on revising and scaling ideas to fit the magazine’s aesthetic, translating concepts across media formats for maximum impact.</p>
+    </div>
+    <div class="principle">
+      <h3>5. Learn to present your work.</h3>
+      <p>In the A/B Client Project, I presented my work to a client, explaining the rationale behind my design choices. This strengthened my ability to articulate design decisions and refine my professional presentation skills.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Third Design Projects Section -->
+<div class="highlight-section">
+  <h2>My Design Projects</h2>
+  <div class="image-grid">
+    <img src="AccessibleDesign.png" alt="Accessible Design Project" onclick="openModal('project9Modal')" style="cursor:pointer;">
+    <img src="TenPage.png" alt="Ten Page Magazine Spread" onclick="openModal('project10Modal')" style="cursor:pointer;">
+    <img src="BrandDesignCover.png" alt="Brand Design Project" onclick="openModal('project11Modal')" style="cursor:pointer;">
+  </div>
+</div>
+
+<!-- Key Takeaways for These Projects -->
+
+<div class="design-principles">
+  <h2>Key Takeaways </h2>
+  <div class="principles-grid">
+    <!-- Takeaway 1 -->
+    <div class="principle">
+      <h3>1. Consider the role of rhetoric, technology, and ethics in acts of making.</h3>
+      <p>In the Accessible Design Project, I focused on creating an inclusive design that meets accessibility standards, reinforcing the importance of ethical design practices.</p>
+      <p>For the Brand Design Project, I explored how branding influences audience perception, using rhetorical and technological choices to convey meaning effectively.</p>
+    </div>
+
+    <!-- Takeaway 2 -->
+    <div class="principle">
+      <h3>2. Leverage Design Principles.</h3>
+      <p>The Ten Page Magazine Spread applied core design principles like alignment, contrast, and space to organize complex information into a visually cohesive layout.</p>
+      <p>In the Brand Design Project, I used repetition, contrast, and balance to ensure a consistent and engaging visual identity.</p>
+    </div>
+
+    <!-- Takeaway 3 -->
+    <div class="principle">
+      <h3>3. Engage with others in a workshop environment.</h3>
+      <p>For the Ten Page Magazine Spread, I gathered feedback to refine the layout, demonstrating the value of collaboration in improving my work.</p>
+      <p>In the Brand Design Project, I worked with professioanls, iterating designs based on their input to align with project goals.</p>
+    </div>
+
+    <!-- Takeaway 4 -->
+    <div class="principle">
+      <h3>4. Practice revision within and across media forms.</h3>
+      <p>The Ten Page Magazine Spread required multiple revisions to scale ideas effectively, ensuring content clarity and visual appeal across pages.</p>
+      <p>For the Accessible Design Project, I revised my work to address accessibility standards, adapting the design to be user-friendly across different media forms.</p>
+    </div>
+
+    <!-- Takeaway 5 -->
+    <div class="principle">
+      <h3>5. Learn to present your work.</h3>
+      <p>In the Brand Design Project, I presented my design process and final outcomes to stakeholders, explaining the rationale behind visual decisions.</p>
+      <p>The Ten Page Magazine Spread allowed me to showcase a cohesive narrative through layout and design, enhancing my ability to present visual storytelling.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modals for Third Projects -->
+<div id="project9Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project9Modal')">&times;</span>
+    <img src="AccessibleDesign.png" alt="Accessible Design Project">
+    <p class="caption">Accessible Design Project</p>
+    <p>This project focused on creating a design that adheres to accessibility standards, ensuring inclusivity and usability for all users.</p>
+  </div>
+</div>
+
+<div id="project10Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project10Modal')">&times;</span>
+    <a href="https://drive.google.com/file/d/1JWfOeDQkUc08AUhjev80srYzFASwnnZZ/view?usp=sharing" target="_blank">
+      <img src="TenPage.png" alt="Ten Page Magazine Spread">
+    </a>
+    <p class="caption">Ten Page Magazine Spread</p>
+    <p>This project applied design principles like alignment, contrast, and space to create a cohesive and engaging magazine layout. 
+    <a href="https://drive.google.com/file/d/1JWfOeDQkUc08AUhjev80srYzFASwnnZZ/view?usp=sharing" target="_blank">View the spread here.</a></p>
+  </div>
+</div>
+
+<div id="project11Modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project11Modal')">&times;</span>
+    <a href="https://docs.google.com/presentation/d/17eUzwS6U0siCHlWgDQha9Tjm3AxHwwDAtouIfaucHlg/edit?usp=sharing" target="_blank">
+      <img src="BrandDesignCover.png" alt="Brand Design Project">
+    </a>
+    <p class="caption">Brand Design Project</p>
+    <p>This project involved creating a cohesive brand identity and presenting the design process to professionals in the field. 
+    <a href="https://docs.google.com/presentation/d/17eUzwS6U0siCHlWgDQha9Tjm3AxHwwDAtouIfaucHlg/edit?usp=sharing" target="_blank">View the presentation here.</a></p>
+  </div>
+</div>
